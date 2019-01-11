@@ -1,0 +1,36 @@
+    {
+        "_id": "5c34453fde6e302d7052b376",
+        "record_type": "expense",
+        "description": "food",
+        "value": "20",
+        "percentage": "222",
+        "month": "2019-01-08T06:37:51.092Z",
+        "__v": 0
+    },
+    {
+        "_id": "5c344550de6e302d7052b377",
+        "record_type": "expense",
+        "description": "fuel",
+        "value": "300",
+        "percentage": "555",
+        "month": "2019-01-08T06:38:08.662Z",
+        "__v": 0
+    },
+    {
+        "_id": "5c344585de6e302d7052b379",
+        "record_type": "expense",
+        "description": "bread",
+        "value": "500",
+        "percentage": "99",
+        "month": "2019-01-08T06:39:01.375Z",
+        "__v": 0
+    },
+    {
+        "_id": "5c344586de6e302d7052b37a",
+        "record_type": "expense",
+        "description": "bread",
+        "value": "500",
+        "percentage": "400",
+        "month": "2019-01-08T06:39:02.649Z",
+        "__v": 0
+    }
