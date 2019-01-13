@@ -24,20 +24,17 @@ const columns = [
     property: "percentage",
     header: "Percentage",
     align: "center",
-    footer: "Total",
     render: datum => (
       <Box pad={{ vertical: "xsmall" }}>
         <Meter
           values={[
             {
-              value: Number(datum.percentage),
-              onClick: () => {
-                datum.remove(datum._id);
-              }
+              value: Number(datum.percentage)
             }
           ]}
           thickness="small"
           size="small"
+          round="true"
         />
       </Box>
     )
@@ -50,9 +47,33 @@ const columns = [
     aggregate: "sum",
     footer: { aggregate: true }
   }
+  ,
+  {
+    property: "remover",
+    align: "center",
+    render: datum => (
+      <Box pad={{ vertical: "xsmall" }} height="40px" width="40px">
+        <Meter
+          values={[
+            {
+              value: datum.remover,
+              onClick: () => {
+                datum.remove(datum._id, datum.record_type);
+              },
+              color: "light-3"
+            }
+          ]}
+          thickness="xlarge"
+          size="xsmall"
+          round="true"
+          type="circle"
+        />
+      </Box>
+    )
+  }
 ];
 
-const TableColumn = ({ data, onDelete }) => {
+const ExpenseTableColumn = ({ data }) => {
 
   return (
     <Grommet theme={grommet}>
@@ -63,4 +84,17 @@ const TableColumn = ({ data, onDelete }) => {
   );
 };
 
-export default TableColumn;
+const IncomeTableColumn = ({ data }) => {
+
+  console.log(data);
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <DataTable key={data._id} columns={columns.filter((p) => (p.property !== 'percentage'))} data={data} />
+      </Box>
+    </Grommet>
+  )
+
+}
+
+export { ExpenseTableColumn, IncomeTableColumn };

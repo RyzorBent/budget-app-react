@@ -33,7 +33,7 @@ class App extends Component {
     this.loadRecords();
   }
 
-  componentWillUpdate() {}
+  componentWillUpdate() { }
 
   calculateAggregates() {
     let totalIncome = 0;
@@ -165,16 +165,16 @@ class App extends Component {
           <Box
             direction="row"
             align="center"
-            justify="center"
+            justify="end"
             flex
             overflow={{ horizontal: "hidden" }}
           >
-            <ItemList
+            {/* <ItemList
               {...this.state}
               delete={this.deleteRecord}
               AppComponent={this}
-            />
-            <RecordsTable expense={this.state.expense} delete={this.deleteRecord.bind(this)} AppComponent={this}/>
+            /> */}
+            <RecordsTable expense={this.state.expense} income={this.state.income} delete={this.deleteRecord.bind(this)} AppComponent={this} />
           </Box>
         </Box>
       </Grommet>

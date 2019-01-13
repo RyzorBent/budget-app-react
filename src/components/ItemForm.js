@@ -12,13 +12,13 @@ class ItemForm extends Component {
     };
   }
 
-  
+
 
   render() {
     const { description, value, income } = this.state;
     const { addRecordToList } = this.props;
     return (
-      <form onSubmit={event => event.preventDefault()}>
+      <form onSubmit={event => { this.setState({ income: false, record_type: '', description: '', value: '' }); event.preventDefault() }}>
         <Box
           direction="row"
           align="center"
@@ -29,7 +29,7 @@ class ItemForm extends Component {
           <CheckBox
             toggle
             checked={income}
-            onChange={event => this.setState({ income: event.target.checked })}
+            onChange={event => this.setState ({ income: event.target.checked })}
           />
 
           <TextInput
